@@ -3,6 +3,7 @@ package commands
 import (
 	"github.com/goravel/framework/contracts/console"
 	"github.com/goravel/framework/contracts/console/command"
+	"github.com/goravel/prisma/helpers"
 	"github.com/steebchen/prisma-client-go/cli"
 )
 
@@ -32,11 +33,13 @@ func (receiver *InitCommand) Extend() command.Extend {
 
 // Handle Execute the console command.
 func (receiver *InitCommand) Handle(ctx console.Context) error {
-	cliCmds := []string{
-		"init", "--generator-provider", ".",
-	}
-
-	cliCmds = append(cliCmds, ctx.Arguments()...)
-
-	return cli.Run(cliCmds, true)
+	return cli.Run(
+		helpers.Commands([]string{
+			"init",
+			"--generator-provider", ".",
+		},
+			ctx.Arguments()...,
+		),
+		true,
+	)
 }
