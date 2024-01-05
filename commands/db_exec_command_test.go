@@ -14,17 +14,17 @@ func TestDBExecCommand(t *testing.T) {
 	mockCtx := &mocks.Context{}
 
 	// no args
-	mockCtx.On("Argument", 0).Return("").Once()
+	mockCtx.On("Arguments").Return([]string{""}).Once()
 	assert.Error(t, dbec.Handle(mockCtx))
 
 	// no --file
-	mockCtx.On("Argument", 0).Return("--file").Once()
+	mockCtx.On("Arguments").Return([]string{"--file"}).Once()
 	assert.Error(t, dbec.Handle(mockCtx))
 
 	// --stdin without sql in stdin
-	mockCtx.On("Argument", 0).Return("--stdin").Once()
+	mockCtx.On("Arguments").Return([]string{"--stdin"}).Once()
 	assert.Error(t, dbec.Handle(mockCtx))
 
-	mockCtx.On("Argument", 0).Return("-h").Once()
+	mockCtx.On("Arguments").Return([]string{"--help"}).Once()
 	assert.Nil(t, dbec.Handle(mockCtx))
 }
