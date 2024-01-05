@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/gookit/color"
-	"github.com/goravel/prisma/mocks"
+	"github.com/hosseinmirzapur/prisma/mocks"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -1,4 +1,4 @@
-module github.com/goravel/prisma
+module github.com/hosseinmirzapur/prisma
 
 go 1.21.4
 

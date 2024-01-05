@@ -3,7 +3,7 @@ package commands
 import (
 	"testing"
 
-	"github.com/goravel/prisma/mocks"
+	"github.com/hosseinmirzapur/prisma/mocks"
 	"github.com/stretchr/testify/assert"
 )
 

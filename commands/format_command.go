@@ -3,7 +3,7 @@ package commands
 import (
 	"github.com/goravel/framework/contracts/console"
 	"github.com/goravel/framework/contracts/console/command"
-	"github.com/goravel/prisma/helpers"
+	"github.com/hosseinmirzapur/prisma/helpers"
 	"github.com/steebchen/prisma-client-go/cli"
 )
 

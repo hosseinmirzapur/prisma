@@ -2,7 +2,7 @@ package prisma
 
 import (
 	"github.com/goravel/framework/contracts/foundation"
-	"github.com/goravel/prisma/commands"
+	"github.com/hosseinmirzapur/prisma/commands"
 
 	consolecontract "github.com/goravel/framework/contracts/console"
 )
