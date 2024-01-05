@@ -19,5 +19,6 @@ func TestGenerateCommand(t *testing.T) {
 	fillPrismaSchema()
 
 	// if database instance not running this passes
+	ctx.On("Arguments").Return([]string{}).Once()
 	assert.Nil(t, genCmd.Handle(ctx))
 }
