@@ -19,7 +19,7 @@ func TestDBSeedCommand(t *testing.T) {
 	defer removePrisma()
 
 	// test on user model
-	mockCtx.On("Argument", 0).Return("")
+	mockCtx.On("Arguments").Return([]string{""})
 	assert.Nil(t, dbsc.Handle(mockCtx))
 
 }
