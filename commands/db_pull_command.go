@@ -1,10 +1,9 @@
 package commands
 
 import (
-	"strings"
-
 	"github.com/goravel/framework/contracts/console"
 	"github.com/goravel/framework/contracts/console/command"
+	"github.com/goravel/prisma/helpers"
 	"github.com/steebchen/prisma-client-go/cli"
 )
 
@@ -33,7 +32,5 @@ func (receiver *DBPullCommand) Extend() command.Extend {
 
 // Handle Execute the console command
 func (r *DBPullCommand) Handle(ctx console.Context) error {
-	args := ctx.Argument(0)
-	cliCmd := append([]string{"db", "pull"}, strings.Split(args, " ")...)
-	return cli.Run(cliCmd, true)
+	return cli.Run(helpers.Commands([]string{"db", "pull"}, ctx.Arguments()...), true)
 }

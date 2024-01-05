@@ -23,7 +23,7 @@ func TestDBPullCommand(t *testing.T) {
 	// runs into error because it needs data in database
 	// otherwise there's no error
 	// used assert.Error to pass test
-	mockCtx.On("Argument", 0).Return("").Once()
+	mockCtx.On("Arguments").Return([]string{""}).Once()
 	assert.Error(t, dbpc.Handle(mockCtx))
 
 }
