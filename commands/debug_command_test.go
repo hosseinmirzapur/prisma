@@ -16,5 +16,6 @@ func TestDebugCommand(t *testing.T) {
 	defer removePrisma()
 
 	// check debug info
+	mockCtx.On("Arguments").Return([]string{}).Once()
 	assert.Nil(t, debugCmd.Handle(mockCtx))
 }
