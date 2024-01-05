@@ -19,5 +19,6 @@ func TestFormatCommand(t *testing.T) {
 	fillPrismaSchema()
 
 	// formatting the prisma schema file has no error
-	assert.NoError(t, fmtCmd.Handle(ctx))
+	ctx.On("Arguments").Return([]string{}).Once()
+	assert.Nil(t, fmtCmd.Handle(ctx))
 }
