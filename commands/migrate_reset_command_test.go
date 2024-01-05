@@ -23,12 +23,12 @@ func TestMigrateResetCommand(t *testing.T) {
 
 	// reset command will fail because it requires user interaction to continue
 	// but passes as a assert.Error() test
-	ctx.On("Argument", 0).Return("").Once()
+	ctx.On("Arguments").Return([]string{""}).Once()
 	assert.Error(t, mdc.Handle(ctx))
 }
 
 func migrateDev(ctx *mocks.Context) {
 	md := NewMigrateDevCommand()
-	ctx.On("Argument", 0).Return("").Once()
+	ctx.On("Arguments").Return([]string{""}).Once()
 	md.Handle(ctx)
 }
