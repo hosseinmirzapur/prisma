@@ -1,10 +1,9 @@
 package commands
 
 import (
-	"strings"
-
 	"github.com/goravel/framework/contracts/console"
 	"github.com/goravel/framework/contracts/console/command"
+	"github.com/goravel/prisma/helpers"
 	"github.com/steebchen/prisma-client-go/cli"
 )
 
@@ -33,11 +32,8 @@ func (receiver *MigrateDevCommand) Extend() command.Extend {
 
 // Handle Execute the console command.
 func (receiver *MigrateDevCommand) Handle(ctx console.Context) error {
-	args := strings.Split(ctx.Argument(0), " ")
-	cliCmds := []string{
-		"migrate", "dev",
-		"--name", "init",
-	}
-	cliCmds = append(cliCmds, args...)
-	return cli.Run(cliCmds, true)
+	return cli.Run(
+		helpers.Commands([]string{"migrate", "dev"}, ctx.Arguments()...),
+		true,
+	)
 }

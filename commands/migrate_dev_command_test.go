@@ -19,7 +19,7 @@ func TestMigrateDevCommand(t *testing.T) {
 	fillPrismaSchema()
 
 	// --name unspecified
-	ctx.On("Argument", 0).Return("")
+	ctx.On("Arguments").Return([]string{"--name", "init"}).Once()
 	assert.Nil(t, mdc.Handle(ctx))
 
 	assert.DirExists(t, "prisma/migrations")
