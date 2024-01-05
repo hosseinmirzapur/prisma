@@ -19,6 +19,6 @@ func TestValidateCommand(t *testing.T) {
 	fillPrismaSchema()
 
 	// no args
-	ctx.On("Argument", 0).Return("").Once()
+	ctx.On("Arguments").Return([]string{""}).Once()
 	assert.Nil(t, mdc.Handle(ctx))
 }
