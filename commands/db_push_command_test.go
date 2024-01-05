@@ -20,7 +20,7 @@ func TestDBPushCommand(t *testing.T) {
 	fillPrismaSchema()
 
 	// requires at least one existing table at database to execute push
-	mockCtx.On("Argument", 0).Return("").Once()
+	mockCtx.On("Arguments").Return([]string{""}).Once()
 	assert.Error(t, dbpc.Handle(mockCtx))
 
 }
