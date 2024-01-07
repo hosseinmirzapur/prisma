@@ -6,7 +6,7 @@ This package is dedicated to [Goravel](https://github.com/goravel/goravel) as an
 
 ## Version
 
-| goravel/prisma | goravel/framework |
+| hosseinmirzapur/prisma | goravel/framework |
 |-------------|-------------------|
 | v1.1.x      | v1.13.x           |
 
@@ -15,14 +15,14 @@ This package is dedicated to [Goravel](https://github.com/goravel/goravel) as an
 1. Add package:
 
 ```bash
-go get github.com/goravel/prisma
+go get github.com/hosseinmirzapur/prisma
 ```
 
 2. Register Service Provider:
 
 ```
 // config/app.go
-import "github.com/goravel/prisma"
+import "github.com/hosseinmirzapur/prisma"
 
 "providers": []foundation.ServiceProvider{
     ...
