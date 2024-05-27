@@ -4,7 +4,7 @@ go 1.21.4
 
 require (
 	github.com/gookit/color v1.5.4
-	github.com/goravel/framework v1.13.9
+	github.com/goravel/framework v1.13.10
 	github.com/steebchen/prisma-client-go v0.37.0
 	github.com/stretchr/testify v1.9.0
 )
